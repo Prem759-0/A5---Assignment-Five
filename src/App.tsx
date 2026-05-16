@@ -206,27 +206,37 @@ const Hero = () => {
   const y2 = useTransform(scrollY, [0, 500], [0, -50]);
 
   return (
-    <section className="pt-42 pb-24 px-6 max-w-7xl mx-auto relative">
+    <section className="pt-36 pb-24 px-6 max-w-7xl mx-auto relative overflow-hidden">
       <motion.div
         style={{ y: y1 }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10"
       >
-        <h1 className="text-[12vw] sm:text-[9vw] lg:text-[8vw] leading-[1] font-medium tracking-tighter mb-8 max-w-5xl">
+        <div className="flex items-center gap-3 mb-8 overflow-hidden">
+          <motion.div 
+            initial={{ w: 0 }}
+            whileInView={{ w: "2rem" }}
+            viewport={{ once: true }}
+            className="w-8 h-[1px] bg-black/20"
+          />
+          <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-black/40">Øliv Branding Agency</span>
+        </div>
+        <h1 className="text-[clamp(3.5rem,10vw,8rem)] leading-[0.95] font-medium tracking-tighter mb-12 max-w-6xl">
           Building Brands, One Success Story at a Time.
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-800 max-w-xl leading-relaxed mb-10">
+        <p className="text-xl sm:text-2xl text-gray-800 max-w-xl leading-relaxed mb-12">
           Create a Brand That Resonates: We Can Help You Define and Communicate Your Unique Message.
         </p>
-        <button className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:scale-105 transition-transform active:scale-95 flex items-center gap-2">
-          Our Services
+        <button className="bg-black text-white px-10 py-5 rounded-full text-lg font-medium hover:scale-105 transition-transform active:scale-95 flex items-center gap-3">
+          Our Services <ArrowUpRight size={20} />
         </button>
       </motion.div>
       <motion.div 
         style={{ y: y2 }}
-        className="absolute -z-10 top-20 right-0 w-64 h-64 bg-[#F3F6F6] rounded-full blur-3xl opacity-50"
+        className="absolute -z-10 top-0 -right-20 w-[50vw] h-[50vw] bg-[#F3F6F6] rounded-full blur-[120px] opacity-60"
       />
     </section>
   );
@@ -801,7 +811,7 @@ const BlogSection = () => {
 
 const ComingSoon = ({ title }: { title: string }) => (
   <PageTransition>
-    <section className="pt-42 pb-42 px-6 max-w-7xl mx-auto min-h-[60vh] flex flex-col items-center justify-center text-center">
+    <section className="pt-36 pb-42 px-6 max-w-7xl mx-auto min-h-[60vh] flex flex-col items-center justify-center text-center">
       <h1 className="text-7xl font-serif mb-6">{title}</h1>
       <p className="text-xl text-gray-500 max-w-md mb-12">
         We are currently crafting this part of our digital experience. Stay tuned for something exceptional.
@@ -829,7 +839,7 @@ const HomePage = () => (
 
 const ServicesPage = () => (
   <PageTransition>
-    <section className="pt-42 pb-24 px-6 max-w-7xl mx-auto">
+    <section className="pt-36 pb-24 px-6 max-w-7xl mx-auto">
       <div className="mb-24">
         <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-8 block">Our Expertise</span>
         <h1 className="text-7xl font-serif max-w-4xl leading-[1.1]">We provide full-service digital solutions for modern brands.</h1>
@@ -868,7 +878,7 @@ const ServicesPage = () => (
 
 const BlogPage = () => (
   <PageTransition>
-    <section className="pt-42 pb-24 px-6 max-w-7xl mx-auto">
+    <section className="pt-36 pb-24 px-6 max-w-7xl mx-auto">
       <div className="mb-24">
         <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-8 block">Our Journal</span>
         <h1 className="text-7xl font-serif max-w-4xl leading-[1.1]">Thoughts, insights, and stories from our creative team.</h1>
@@ -897,7 +907,7 @@ const BlogPage = () => (
 
 const ContactPage = () => (
   <PageTransition>
-    <section className="pt-42 pb-42 px-6 max-w-7xl mx-auto">
+    <section className="pt-36 pb-42 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
         <div>
           <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-8 block">Contact Us</span>
@@ -970,7 +980,7 @@ export default function App() {
       <ScrollToSection />
       <main className="relative overflow-x-hidden min-h-screen flex flex-col">
         <Navbar />
-        <div className="flex-grow pt-20">
+        <div className="flex-grow">
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<HomePage />} />
