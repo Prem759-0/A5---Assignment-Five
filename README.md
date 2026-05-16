@@ -1,10 +1,10 @@
 
 
-# Run and deploy your AI Studio app
+# Run and deploy your Studio app
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://a5-assignment-five.vercel.app/
+View your app in Studio: https://a5-assignment-five.vercel.app/
 
 ## Run Locally
 
@@ -13,6 +13,6 @@ View your app in AI Studio: https://a5-assignment-five.vercel.app/
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+
+2. Run the app:
    `npm run dev`
