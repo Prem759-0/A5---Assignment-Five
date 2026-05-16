@@ -4,7 +4,7 @@
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/ba34a5cd-26e8-428a-8d0e-d52c6bf63d6b
+View your app in AI Studio: https://a5-assignment-five.vercel.app/
 
 ## Run Locally
 
